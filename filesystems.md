@@ -1,33 +1,59 @@
-# Drives
-## Physical Drives
-A physical drive is the hardware that exists physically, this can be a Hard Disk Drive (HDD)
-or a Solid State Drive (SSD). The data (0s and 1s) on a HDD are represented as peaks and 
-troughs on its optical discs. Whereas an SSD stores its data as varying charge levels 
-in memory cells.
+## Clusters, Sectors, and Tracks
+<img src="images/disk-structure.png"
+    alt="image showing clusters, sectors, and tracks"
+    style="background-color:grey;
+        width:50%;"/>
 
-## Partitions
-Partitions are the subdivision of a drive. Operating systems will usually treat partitions 
-as separate physical drives. 
+| Label | Meaning |
+|-------|---------|
+|A|Track.|
+|B|Sector.|
+|C|Sector of track.|
+|D|Cluster of sectors.|
 
-### Partitioning Information
-There are two ways to store partitioning information on drives, MBR and GPT. This information
-includes where partitions start and end on the physical disk. This ensures the OS knows which
-sectors belong to which partitions as well as what partitions are bootable. MBR is limited to
-four primary partitions or three primary and one extended whereas GPT can have 128 partitions.
+## File Allocation Table (FAT)
+### Boot Sector Layout
+| Offset | Length (Bytes) | Meaning |
+|--------|----------------|---------|
+|0x00|3|Bootsrap jump command.|
+|0x03|8|OEM name.|
+|0x0b|2|Bytes per sector (big-endian).|
+|0x0d|1|Sectors per cluster.|
+|0x0e|2|Reserved sectors.|
+|0x10|1|Number of FATs.|
+|0x11|2|Number of root entries.|
+|0x13|2|Number of sectors < 32 MB, 0 for FAT 32.|
+|0x15|1|Media descriptor: f0 is removable, f8 is fixed.|
+|0x16|2|Sectors per FAT.|
+|0x18|2|Sectors per track.|
+|0x1A|2|Number of heads.|
+|0x1C|4|Number of hidden sectors.|
+|0x20|4|Number of sectors > 32 MB.|
 
-## Physical Volumes
-Physical volumes are self-contained data units. They are assigned a unique name and configured 
-with a single file system such as NTFS or FAT32. In most cases a volume will take up an 
-entire drive or partition. On windows, C: or D: are physical volumes.
+What comes after 0x20 depends on the type of FAT being used. FAT12 and 16 differs from FAT32.
+### FAT 12 and 16
+| Offset | Length (Bytes) | Meaning |
+|--------|----------------|---------|
+|0x24|1|Drive number.|
+|0x25|1|Windows NT flag.|
+|0x26|1|Extended boot signature.|
+|0x27|4|Volume serial number.|
+|0x2b|11|Volume label.|
+|0x36|8|File system type: FAT12 or FAT16.|
 
-## Logical Volumes
-Volume groups are created by combining physical volumes in which logical volumes are created 
-on top. Logical volumes are not limited to one physical drive but instead the volume group
-which can span mulitple drives and partitions. An example of this is RAID 1 which mirrors 
-data across drives.
-
-![image representing physical and logical drives](images/volumes.png)
-
-## Logical Drives
-When mulitple partitions are made on a physical drive and formatted into volumes, each volume
-is a logical drive.
+### FAT32
+| Offset | Length (Bytes) | Meaning |
+|--------|----------------|---------|
+|0x24|4|32-bit count of sectors per FAT.|
+|0x28|2|External flags.|
+|0x2a|2|File system version.|
+|0x2c|4|Root directory cluster.|
+|0x30|2|File system info.|
+|0x32|2|Boot record backup.|
+|0x34|12|Reserved.|
+|0x40|1|Number of drives.|
+|0x41|1|Reserved.|
+|0x42|1|Boot signature.|
+|0x43|4|Volume ID.|
+|0x47|11|Volume label.|
+|0x52|8|File system type.|
