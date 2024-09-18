@@ -1,4 +1,4 @@
-## Clusters, Sectors, and Tracks
+# Clusters, Sectors, and Tracks
 <img src="images/disk-structure.png"
     alt="image showing clusters, sectors, and tracks"
     style="background-color:grey;
@@ -11,8 +11,8 @@
 |C|Sector of track.|
 |D|Cluster of sectors.|
 
-## File Allocation Table (FAT)
-### Boot Sector Layout
+# File Allocation Table (FAT)
+## Boot Sector Layout
 | Offset | Length (Bytes) | Meaning |
 |--------|----------------|---------|
 |0x00|3|Bootsrap jump command.|
@@ -30,8 +30,9 @@
 |0x1C|4|Number of hidden sectors.|
 |0x20|4|Number of sectors > 32 MB.|
 
-What comes after 0x20 depends on the type of FAT being used. FAT12 and 16 differs from FAT32.
-### FAT 12 and 16
+What comes after 0x20 depends on the type of FAT being 
+used. FAT12 and FAT16 differs from FAT32.
+### FAT12 and FAT16
 | Offset | Length (Bytes) | Meaning |
 |--------|----------------|---------|
 |0x24|1|Drive number.|
