@@ -11,8 +11,7 @@
 |C|Sector of track.|
 |D|Cluster of sectors.|
 
-# File Allocation Table (FAT)
-## Boot Sector Layout
+# File Allocation Table (FAT) Boot Sector Layout
 | Offset | Length (Bytes) | Meaning |
 |--------|----------------|---------|
 |0x00|3|Bootsrap jump command.|
@@ -58,3 +57,30 @@ used. FAT12 and FAT16 differs from FAT32.
 |0x43|4|Volume ID.|
 |0x47|11|Volume label.|
 |0x52|8|File system type.|
+
+# NTFS Boot Sector Layout
+| Offset | Length (Bytes) | Meaning |
+|--------|----------------|---------|
+|0x00|3|Bootstrap jump command.|
+|0x03|8|OEM ID.|
+|0x0b|2|Bytes per sector.|
+|0x0d|1|Sectors per cluster.|
+|0x0e|2|Reserved sectors.|
+|0x10|3|Reserved, this value is always 0.|
+|0x13|2|Not used by NTFS.|
+|0x15|1|Media descriptor.|
+|0x16|2|Always 0.|
+|0x18|2|Sectors per track.|
+|0x1a|2|Number of heads.|
+|0x1c|4|Hidden sectors.|
+|0x20|4|Not used by NTFS.|
+|0x24|4|Not used by NTFS.|
+|0x28|8|Total sectors.|
+|0x30|8|Logical cluster number for the file $MFT.|
+|0x38|8|Logical cluster number for the file $MFTMirr.|
+|0x40|4|Clusters per file record segment.|
+|0x44|1|Clusters per index buffer.|
+|0x45|3|Not used by NTFS.|
+|0x48|8|Volume serial number.|
+|0x50|4|Checksum.|
+|0x54|426|Bootstrap code.|
