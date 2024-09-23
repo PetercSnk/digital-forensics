@@ -87,7 +87,7 @@ Remove passwords.txt:
 
 Remove the directory secrets:
 
-`rm -r secrets`
+`rm -rf secrets`
 
 # Hashing
 | Command | Description |
@@ -110,13 +110,11 @@ Display partition tables:
 
 `fdisk -l`
 
-Create a bit-by-bit image of /dev/sdb1 and output it to 
-the file fat32.dd:
+Create a bit-by-bit image of /dev/sdb1 and output it to the file fat32.dd:
 
 `dd if=/dev/sdb1 of=fat32.dd`
 
-Create a bit-by-bit image of /dev/sdb1 and output it to 
-the file fat32.dd, this time copy only 1 block with a 
-block size of 512 and skip the first block:
+Create a bit-by-bit image of /dev/sdb1 and output it to the file fat32.dd. This time copy only 1 block with a 
+block with a size of 512 and skip the first block:
 
 `dd if=/dev/sdb1 bs=512 count=1 skip=1 of=fat32.dd`
