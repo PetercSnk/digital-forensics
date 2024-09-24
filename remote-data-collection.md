@@ -66,4 +66,27 @@ The following stops network numbers being converted to host names for network fi
 `./lsof -n | ./less`
 
 Inspecting log files can also be very useful, the majority of log files in linux are
-found within the /var/log directory.
+found within the /var/log directory. For example authentication logs can be found
+with the below command and location:
+
+`./less /var/log/auth.log`
+
+We can create a timeline with mac-robber and mactime in the same way we created a 
+memory image with netcat. The mac-robber utility collects metadata from allocated 
+files in a mounted filesystem, and mactime puts this data into a timeline.
+
+On the host machine with the ip address 192.168.1.10 run:
+
+`nc -l -p 31337 > bodyfile.mac`
+
+On the target machine run:
+
+`./mac-robber / | ./nc 192.168.1.10 31337`
+
+This will result in a bodyfile which mactime can be used on:
+
+`mactime -b bodyfile.mac > comp-timeline.txt`
+
+Read this timeline file with less:
+
+`less comp-timeline.txt`
