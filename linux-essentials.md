@@ -49,6 +49,7 @@ Search for the string "root" in audit.log
 |&&|Used to combine multiple commands in one line.|
 |>|Redirects output from a command (replace).|
 |>>|Redirects output from a command (append).|
+|\||Used to pipe one command into another.|
 
 # File Operating
 | Command | Description |
@@ -58,7 +59,7 @@ Search for the string "root" in audit.log
 |cp|Copies a file or directory.|
 |mv|Moves or renames a file or directory.|
 |file|Determines the file type.|
-|rm|Removes a file or directory|
+|rm|Removes a file or directory.|
 
 ### Examples
 Create a file named passwords.txt:
