@@ -20,7 +20,8 @@ Find the ip address of the targets machine with:
 
 A static ip address can also be set with ifconfig. Make a note of what network device
 was shown when running the command on its own as this will be requried, it will likely 
-be eno, ens, or eth. The following is an example where the ip address is set to 192.168.1.2:
+be eno, ens, or eth. The following is an example where the ip address is set to
+192.168.1.2:
 
 `./ifconfig ens33 192.168.1.2 netmask 255.255.255.0`
 
@@ -49,4 +50,20 @@ host is listening. This can be done with the command below:
 `./memdump | ./nc 192.168.1.10 31337`
 
 Note that netcat will stay connected so once the file memdump stops growing in size stop
-netcat with ctrl-c.
+netcat with ctrl-c. We now have a memory image from the target machine.
+
+On the target machine we can now use lsof to examine open files and the processes that
+use them. This command has a wide range of options and some examples are shown below.
+Note that the output from lsof is piped to less as it displays it in a more readable
+format.
+
+The following will display files access by the network:
+
+`./lsof -i | ./less`
+
+The following stops network numbers being converted to host names for network files:
+
+`./lsof -n | ./less`
+
+Inspecting log files can also be very useful, the majority of log files in linux are
+found within the /var/log directory.
