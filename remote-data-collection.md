@@ -57,7 +57,7 @@ use them. This command has a wide range of options and some examples are shown b
 Note that the output from lsof is piped to less as it displays it in a more readable
 format.
 
-The following will display files access by the network:
+The following will display files being accessed by the network:
 
 `./lsof -i | ./less`
 
@@ -90,3 +90,22 @@ This will result in a bodyfile which mactime can be used on:
 Read this timeline file with less:
 
 `less comp-timeline.txt`
+
+Drives can also be imaged using dd and netcat. On our host machine we can run the
+same netcat command as used before:
+
+`nc -l -p 31337 > compromised-disk.img`
+
+The dd command can then be used on the target machine where the result is piped to
+netcat. The following will image the drive sdb1 and send it to our host machine on
+192.168.1.10:
+
+`./dd if=/dev/sdb1 | ./nc 192.168.1.10 31337`
+
+It is a good idea to generate and save the hash value of this file so we can check
+if it has been tampered with. In the case where a change has been made it would no 
+longer be a good source of evidence.
+
+`md5sum compromised-disk.img`
+
+`sha1sum compromised-disk.img`
