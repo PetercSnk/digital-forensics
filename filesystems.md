@@ -50,7 +50,7 @@ What comes after 0x20 depends on the type of FAT being used. FAT12 and FAT16 dif
 |0x24|4|32-bit count of sectors per FAT.|
 |0x28|2|External flags.|
 |0x2a|2|File system version.|
-|0x2c|4|Cluster numbe of the start of the root directory.|
+|0x2c|4|Cluster number of the start of the root directory.|
 |0x30|2|Sector number of the file system information sector.|
 |0x32|2|Sector number of the back up boot sector.|
 |0x34|12|Reserved.|
@@ -80,8 +80,8 @@ Note that NTFS also uses little-endian for all values except strings.
 |0x20|4|Not used by NTFS.|
 |0x24|4|Not used by NTFS.|
 |0x28|8|Total sectors.|
-|0x30|8|Logical cluster number for the file $MFT.|
-|0x38|8|Logical cluster number for the file $MFTMirr.|
+|0x30|8|Logical cluster number for the Master File Table, file $MFT.|
+|0x38|8|Logical cluster number for the Master File Table copy, file $MFTMirr.|
 |0x40|4|Clusters per file record segment.|
 |0x44|1|Clusters per index buffer.|
 |0x45|3|Not used by NTFS.|
