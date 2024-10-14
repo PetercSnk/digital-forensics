@@ -1,4 +1,6 @@
-# Basics
+# Linux Essentials
+
+## Basics
 
 | Command | Description |
 |---------|-------------|
@@ -12,7 +14,7 @@ Display the manual page for the ls command:
 
 `man ls`
 
-# File System
+## File System
 
 | Command | Description |
 |---------|-------------|
@@ -21,7 +23,7 @@ Display the manual page for the ls command:
 |cat|Outputs the contents of a file.|
 |pwd|Prints the working directory.|
 
-# Searching
+## Searching
 
 | Command | Description |
 |---------|-------------|
@@ -45,7 +47,7 @@ Search for the string "root" in audit.log
 
 `grep "root" /var/log/audit/audit.log`
 
-# Shell Operators
+## Shell Operators
 
 | Command | Description |
 |---------|-------------|
@@ -55,7 +57,7 @@ Search for the string "root" in audit.log
 |>>|Redirects output from a command (append).|
 |\||Used to pipe one command into another.|
 
-# File Operating
+## File Operating
 
 | Command | Description |
 |---------|-------------|
@@ -95,7 +97,7 @@ Remove the directory secrets:
 
 `rm -rf secrets`
 
-# Hashing
+## Hashing
 
 | Command | Description |
 |---------|-------------|
@@ -106,7 +108,7 @@ Calculate the md5 hash of audit.log:
 
 `md5sum /var/log/audit/audit.log`
 
-# Disk Analysis
+## Disk Analysis
 
 | Command | Description |
 |---------|-------------|

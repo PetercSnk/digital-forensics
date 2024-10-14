@@ -1,9 +1,11 @@
-# What is Hashing?
+# Hashing
+
+## What is Hashing?
 Hashing is the process of converting data into a fixed
 length string. Data is converted using certain alorithms
 called hash functions.
 
-# How Hashing Works
+## How Hashing Works
 ### Input
 The input data can be in almost any format such as a
 strings, numbers, images, files, or directories.
@@ -19,7 +21,7 @@ combined.
 The output of a hash function is the hash value, which
 should ideally be unique for each input.
 
-# Hashing Properties
+## Hashing Properties
 ### Deterministic
 Using the same input data and hashing algorithm should
 always result in the same hash value. When two different
@@ -32,7 +34,7 @@ blocks quickly into a hash value.
 Hash functions should make it impossible to recreate the
 original data from the hash value.
 
-# Uses
+## Uses
 ### Detecting Changes in Data
 Hashing is an effective method of checking whether two
 sets of data are the same. An example of this is checking

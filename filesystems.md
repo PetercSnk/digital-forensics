@@ -1,4 +1,6 @@
-# Clusters, Sectors, and Tracks
+# Filesystems
+
+## Clusters, Sectors, and Tracks
 <img src="images/disk-structure.png"
     alt="image showing clusters, sectors, and tracks"
     style="background-color:grey;
@@ -11,7 +13,7 @@
 |C|Sector of track.|
 |D|Cluster of sectors.|
 
-# File Allocation Table (FAT) Boot Sector Layout
+## File Allocation Table (FAT) Boot Sector Layout
 Values in FAT file systems are either stored in bytes, words (pair of bytes), or doublewords.
 Note that little-endian is used for all values except strings where the first byte of a pair 
 is the least significant byte, and the second byte of a pair is the most significant byte. 
@@ -65,7 +67,7 @@ What comes after 0x20 depends on the type of FAT being used. FAT12 and FAT16 dif
 |0x47|11|Volume name of partition.|
 |0x52|8|File system type: FAT32.|
 
-# NTFS Boot Sector Layout
+## NTFS Boot Sector Layout
 Note that NTFS also uses little-endian for all values except strings.
 
 | Offset | Length (Bytes) | Meaning |

@@ -1,4 +1,5 @@
 # Remote Data Collection
+
 Clean (non-compromised) utilities need to be used in case the target machine has been 
 tampered with. The Sleuth Kit is a library of such utilities and will be used for this
 example. In most cases this is stored on a USB which will need mounting. The following
