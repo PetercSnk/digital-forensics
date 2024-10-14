@@ -1,4 +1,5 @@
 # Basics
+
 | Command | Description |
 |---------|-------------|
 |echo|Displays text to the command line.|
@@ -12,6 +13,7 @@ Display the manual page for the ls command:
 `man ls`
 
 # File System
+
 | Command | Description |
 |---------|-------------|
 |ls|Lists files in current directory.|
@@ -20,6 +22,7 @@ Display the manual page for the ls command:
 |pwd|Prints the working directory.|
 
 # Searching
+
 | Command | Description |
 |---------|-------------|
 |find|Finds files.|
@@ -43,6 +46,7 @@ Search for the string "root" in audit.log
 `grep "root" /var/log/audit/audit.log`
 
 # Shell Operators
+
 | Command | Description |
 |---------|-------------|
 |&|Runs commands in the background.|
@@ -52,6 +56,7 @@ Search for the string "root" in audit.log
 |\||Used to pipe one command into another.|
 
 # File Operating
+
 | Command | Description |
 |---------|-------------|
 |touch|Creates a file.|
@@ -91,6 +96,7 @@ Remove the directory secrets:
 `rm -rf secrets`
 
 # Hashing
+
 | Command | Description |
 |---------|-------------|
 |md5sum|Calculates the md5 hash.|
@@ -101,6 +107,7 @@ Calculate the md5 hash of audit.log:
 `md5sum /var/log/audit/audit.log`
 
 # Disk Analysis
+
 | Command | Description |
 |---------|-------------|
 |fdisk|Creates, manipulates, and displays partition tables.|

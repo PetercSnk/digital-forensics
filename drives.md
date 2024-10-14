@@ -7,7 +7,6 @@ in memory cells.
 # Partitions
 Partitions are the subdivision of a drive. Operating systems will usually treat partitions 
 as separate physical drives. 
-
 ### Partitioning Information
 There are two ways to store partitioning information on drives, MBR and GPT. This information
 includes where partitions start and end on the physical disk. This ensures the OS knows which

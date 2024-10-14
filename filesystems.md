@@ -16,6 +16,7 @@ Values in FAT file systems are either stored in bytes, words (pair of bytes), or
 Note that little-endian is used for all values except strings where the first byte of a pair 
 is the least significant byte, and the second byte of a pair is the most significant byte. 
 This is also the case for double words.
+
 | Offset | Length (Bytes) | Meaning |
 |--------|----------------|---------|
 |0x00|3|Bootsrap jump command.|
@@ -34,7 +35,9 @@ This is also the case for double words.
 |0x20|4|Number of sectors in file system, will be 0 if 0x13 is non-zero.|
 
 What comes after 0x20 depends on the type of FAT being used. FAT12 and FAT16 differs from FAT32.
+
 ### FAT12 and FAT16
+
 | Offset | Length (Bytes) | Meaning |
 |--------|----------------|---------|
 |0x24|1|Drive number.|
@@ -45,6 +48,7 @@ What comes after 0x20 depends on the type of FAT being used. FAT12 and FAT16 dif
 |0x36|8|File system type: FAT12 or FAT16.|
 
 ### FAT32
+
 | Offset | Length (Bytes) | Meaning |
 |--------|----------------|---------|
 |0x24|4|32-bit count of sectors per FAT.|
@@ -63,6 +67,7 @@ What comes after 0x20 depends on the type of FAT being used. FAT12 and FAT16 dif
 
 # NTFS Boot Sector Layout
 Note that NTFS also uses little-endian for all values except strings.
+
 | Offset | Length (Bytes) | Meaning |
 |--------|----------------|---------|
 |0x00|3|Bootstrap jump command.|

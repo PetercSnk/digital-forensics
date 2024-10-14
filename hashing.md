@@ -1,5 +1,4 @@
 # What is Hashing?
-
 Hashing is the process of converting data into a fixed
 length string. Data is converted using certain alorithms
 called hash functions.
