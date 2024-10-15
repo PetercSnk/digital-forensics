@@ -1,11 +1,27 @@
 # Windows Live System Analysis
 
+## Helper Commands
+
+When using command line utilities the output provided to
+the console may be very large. To improve readability we
+can try piping our output into more or findstr.
+
+The command more will only display one screen of output
+at a time.
+
+`<command> | more`
+
+The command findstr will only display lines where a match
+is found.
+
+`<command> | findstr <string>`
+
 ## Processes
 
 To check which processes are running on a system we can
 use the following methods:
 
-- The task manager is a system monitor program built into
+- The Task Manager is a system monitor program built into
 Windows systems that provides information about running
 processes and applications. 
     - `taskmgr.exe`
@@ -39,3 +55,43 @@ information for each process.
     - `tasklist /svc`
 
 ## Registry Keys
+
+Processes and services may be started from the Run,
+RunOnce, and RunOnceEx registry keys. Using the Registry
+Editor we can find these registry keys in the following
+locations:
+
+- HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+- HKLM\Software\Microsoft\Windows\CurrentVersion\Runonce
+- HKLM\Software\Microsoft\Windows\CurrentVersion\RunonceEx
+
+HKLM will be the local machine, HKCU can also be used to
+view start-up processes for the current user.
+
+The command reg query will also perform the same task as
+above, the following is an example:
+
+`reg query <registry key location>`
+
+## Network Usage
+
+To analyse system network usage the netstat tool can be
+used. This command line utility will display statistics
+for all network connections. An example and the various
+options that can be used are provided below:
+
+`netstat -<options>`
+
+|Option|Description|
+|------|-----------|
+|n|Numerical IP addresses instead of names.|
+|n seconds|Refreshes after chosen number of seconds.|
+|a|Active and inactive connections.|
+|b|Executables associated with connections.|
+|e|Network interface statistics.|
+|f|Fully qualified domain names.|
+|o|Process IDs for each connection.|
+|p protocol|Connections for chosen protocol.|
+|q|Listening and non-listening ports.|
+|s|Statistics by protocol.|
+|r|Current network routing table.|
