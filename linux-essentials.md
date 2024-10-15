@@ -10,6 +10,7 @@
 |man|Displays the manual page for a command.|
 
 ### Examples
+
 Display the manual page for the ls command:
 
 `man ls`
@@ -31,6 +32,7 @@ Display the manual page for the ls command:
 |grep|Searches the contents of files.|
 
 ### Examples
+
 Find the text document passwords.txt:
 
 `find -name passwords.txt`
@@ -69,6 +71,7 @@ Search for the string "root" in audit.log
 |rm|Removes a file or directory.|
 
 ### Examples
+
 Create a file named passwords.txt:
 
 `touch passwords.txt`
@@ -104,6 +107,7 @@ Remove the directory secrets:
 |md5sum|Calculates the md5 hash.|
 
 ### Examples
+
 Calculate the md5 hash of audit.log:
 
 `md5sum /var/log/audit/audit.log`
@@ -116,6 +120,7 @@ Calculate the md5 hash of audit.log:
 |dd|Converts and copies files.|
 
 ### Examples
+
 Display partition tables:
 
 `fdisk -l`
