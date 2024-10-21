@@ -1,6 +1,6 @@
 # Windows Live System Analysis
 
-## Helper Commands
+## Important
 
 When using command line utilities the output provided to
 the console may be very large. To improve readability we
@@ -16,6 +16,11 @@ is found.
 
 `<command> | findstr <string>`
 
+When a program with a .exe or .msc extension is mentioned
+we can run it by pressing win+r and entering the name.ext.
+In addition to this we can run the program by entering 
+just the name into a terminal.
+
 ## Processes
 
 To check which processes are running on a system we can
@@ -25,7 +30,7 @@ use the following methods:
 Windows systems that provides information about running
 processes and applications. 
     - `taskmgr.exe`
-- The command tasklist can be used to display a list of 
+- The command **tasklist** can be used to display a list of 
 running processes on a local or remote system. 
 [[documentation](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/tasklist)]
     - `tasklist /v`
@@ -45,12 +50,12 @@ use the following methods:
 - Windows has a built in services GUI that provides
 information on active and dead services.
     - `services.msc`
-- The command sc/sc.exe can be used to display information
+- The command **sc** can be used to display information
 about a specified service, driver, type of service, or
 type of driver.
 [[documentation](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/sc-query)]
     - `sc query`
-- The command tasklist can also used to list all service
+- The command **tasklist** can also used to list all service
 information for each process.
     - `tasklist /svc`
 
@@ -68,8 +73,8 @@ locations:
 HKLM will be the local machine, HKCU can also be used to
 view start-up processes for the current user.
 
-The command reg query will also perform the same task as
-above, the following is an example:
+The command **reg query** will also perform the same task as
+above.
 
 `reg query <registry key location>`
 
@@ -95,3 +100,26 @@ options that can be used are provided below:
 |q|Listening and non-listening ports.|
 |s|Statistics by protocol.|
 |r|Current network routing table.|
+
+## Accounts
+
+All local users and groups can be viewed from the manager
+console. This can be done by opening run with win+r and 
+entering lusrmgr.msc. Here all users and groups are 
+displayed, where by looking in the administrators group
+we can see who has these privileges.
+
+Viewing the users within the administrator group can
+also be done on the command line with the following:
+
+`net localgroup administrators`
+
+## Log Entries
+
+Windows has a built in GUI called Event Viewer that can
+be used to view events and logs for the current system.
+We can also view the current settings of policies with
+secpol.msc. If we go to Local Policies -> Audit Policy
+-> Audit Logon Events, we can see that logon events are
+not logged by default, this can be changed to log both
+successful and failed attempts within its properties.
