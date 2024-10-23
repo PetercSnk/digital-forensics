@@ -3,11 +3,11 @@
 ## Basics
 
 Refer to the links below for extra information on
-volatilities commands.
+volatility commands.
 
 - [General commands](https://github.com/volatilityfoundation/volatility/wiki/Command-Reference)
 
-- [Commands for hunting rootkits and malicious code](https://github.com/volatilityfoundation/volatility/wiki/Command-Reference-Mal#psxview)
+- [Commands for hunting rootkits and malicious code](https://github.com/volatilityfoundation/volatility/wiki/Command-Reference-Mal)
 
 We can use a memory image with volatility by setting the
 -f option.
@@ -17,13 +17,12 @@ We can use a memory image with volatility by setting the
 ## Image Information
 
 To gather more information about the memory dump we can
-specify **imageinfo** as an argument. This should allow
-us to identify the machines OS and when the image was
-taken.
+use the plugin **imageinfo**. This should allow us to identify
+the OS of the machine and when the image was taken.
 
 `volatility.exe -f <image file> imageinfo`
 
-To use various other arguments the OS should be provided
+To use various other plugins the OS should be provided
 as an additional option.
 
 `volatility.exe -f <image file> --profile=<OS> <arguments>`
@@ -35,7 +34,7 @@ the time of imaging **pslist** can be used. This will
 contain processes that are reporting to the OS as
 normal. Hidden and unlinked processes will not be shown.
 
-This command walks the doubly-linked list pointed to by
+This plugin walks the doubly-linked list pointed to by
 PsActiveProcessHead. Note that processes that have 0
 threads and handles, and a non-empty exit time may not
 actually still be active.
@@ -56,18 +55,18 @@ values.
 `volatility.exe -f <image file> --profile=<OS> psscan`
 
 To find processes that are trying to hide themselves the 
-command **psxview** can be used. Here we can view and compare
+plugin **psxview** can be used. Here we can view and compare
 what is reported by various other sources of process listings.
 
 A False in any column indicates that the respective process is
 missing. Processes that appear in every column except pslist
-can be considered suspicious.
+are usually considered suspicious.
 
 `volatility.exe -f <image file> --profile=<OS> psxview`
 
 ## Networking
 
-With the command **connscan** we can find artifacts from
+With the plugin **connscan** we can find artifacts from
 previous TCP connections that were active in addition to
 ones that have been terminated. Note that in some cases the
 output may have partially overwritten fields thus causing
@@ -76,7 +75,7 @@ false postives.
 `volatility.exe -f <image file> --profile=<OS> connscan`
 
 In order to detect listening sockets for any protocol the
-command **sockets** can be used. This walks a singly-linked
+plugin **sockets** can be used. This walks a singly-linked
 list of socket structures which is pointed to by a non-exported
 symbol in the tcpip.sys module.
 
@@ -94,7 +93,7 @@ the connection. It handles tasks such as IP address
 assignment, data transmission, are error handling.
 
 To scan for network artifacts on 32/64 bit Windows Vista,
-Windows 2008 Server, and Windows 7, the command **netscan**
+Windows 2008 Server, and Windows 7, the plugin **netscan**
 can be used. This will scan for connections and sockets.
 
 `volatility.exe -f <image file> --profile=<OS> netscan`
