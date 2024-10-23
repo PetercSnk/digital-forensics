@@ -1,7 +1,0 @@
--[x] Physical & logical drives
--[ ] filesystems & bootsectors: fat32, fat16, ntfs
--[x] hashing
--[x] linux commands: su, fdisk, dd, echo, whoami, ls, cd, cat, pwd, find, grep, man
--[x] file operation commands: touch, mkdir, cp, mv, rm, file, md5sum
--[x] shell operators: &, &&, >, >>
--[x] sectors, clusters, tracks
