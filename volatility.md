@@ -1,13 +1,16 @@
 # Volatility
 
-## Basics
+## General
 
 Refer to the links below for extra information on
 volatility commands.
 
-- [General commands](https://github.com/volatilityfoundation/volatility/wiki/Command-Reference)
+- [Windows Core](https://github.com/volatilityfoundation/volatility/wiki/Command-Reference)
 
-- [Commands for hunting rootkits and malicious code](https://github.com/volatilityfoundation/volatility/wiki/Command-Reference-Mal)
+- [Windows Malware](https://github.com/volatilityfoundation/volatility/wiki/Command-Reference-Mal)
+
+Note that we are working with volatility 2 and the commands
+will differ from volatility 3.
 
 We can use a memory image with volatility by setting the
 -f option.
@@ -100,26 +103,27 @@ can be used. This will scan for connections and sockets.
 
 ## Commands
 
-We can use **cmdline**, **cmdscan**, and **consoles** to
-view the last commands run on the system. Commands entered
-into cmd.exe are processed by conhost.exe (csrss.exe 
-before Windows 7), so even if cmd.exe is killed before
-a memory dump takes place there is still a chance to
-retrieve the commands entered.
+We can use **cmdline** to display process command line
+arguments. Commands entered into cmd.exe are processed
+by conhost.exe (csrss.exe before Windows 7), so even if
+cmd.exe is killed before a memory dump takes place there
+is still a chance to retrieve the commands entered from
+conhost.exe's memory.
 
 `volatility.exe -f <image fie> --profile=<OS> cmdline`
-
-`volatility.exe -f <image file> --profile=<OS> cmdscan`
-
-`volatility.exe -f <image file> --profile=<OS> consoles`
-
-The plugin cmdscan will scan for command_history whereas
-consoles will scan for console_information.
 
 We can also specify a process ID to see what command was
 run to execute that process.
 
 `volatility.exe -f <image file> --profile=<OS> -p <PID> cmdline`
+
+The plugins **cmdscan** and **consoles** work a little 
+different as they extract command history by scanning for
+_COMMAND_HISTORY and _CONSOLE_INFORMATION respectively.
+
+`volatility.exe -f <image file> --profile=<OS> cmdscan`
+
+`volatility.exe -f <image file> --profile=<OS> consoles`
 
 ## DLLs
 
