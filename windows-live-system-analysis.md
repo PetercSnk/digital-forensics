@@ -89,17 +89,17 @@ options that can be used are provided below:
 
 |Option|Description|
 |------|-----------|
-|n|Numerical IP addresses instead of names.|
-|n seconds|Refreshes after chosen number of seconds.|
-|a|Active and inactive connections.|
-|b|Executables associated with connections.|
-|e|Network interface statistics.|
-|f|Fully qualified domain names.|
-|o|Process IDs for each connection.|
-|p protocol|Connections for chosen protocol.|
-|q|Listening and non-listening ports.|
-|s|Statistics by protocol.|
-|r|Current network routing table.|
+|n|Numerical IP addresses instead of names|
+|n seconds|Refreshes after chosen number of seconds|
+|a|Active and inactive connections|
+|b|Executables associated with connections|
+|e|Network interface statistics|
+|f|Fully qualified domain names|
+|o|Process IDs for each connection|
+|p protocol|Connections for chosen protocol|
+|q|Listening and non-listening ports|
+|s|Statistics by protocol|
+|r|Current network routing table|
 
 ## Accounts
 

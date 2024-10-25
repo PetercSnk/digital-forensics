@@ -4,10 +4,10 @@
 
 | Command | Description |
 |---------|-------------|
-|echo|Displays text to the command line.|
-|whoami|Displays the username of who you're logged in as.|
-|su|Logs in as root.|
-|man|Displays the manual page for a command.|
+|echo|Displays text to the command line|
+|whoami|Displays the username of who you're logged in as|
+|su|Logs in as root|
+|man|Displays the manual page for a command|
 
 ### Examples
 
@@ -19,17 +19,17 @@ Display the manual page for the ls command:
 
 | Command | Description |
 |---------|-------------|
-|ls|Lists files in current directory.|
-|cd|Changes the current directory.|
-|cat|Outputs the contents of a file.|
-|pwd|Prints the working directory.|
+|ls|Lists files in current directory|
+|cd|Changes the current directory|
+|cat|Outputs the contents of a file|
+|pwd|Prints the working directory|
 
 ## Searching
 
 | Command | Description |
 |---------|-------------|
-|find|Finds files.|
-|grep|Searches the contents of files.|
+|find|Finds files|
+|grep|Searches the contents of files|
 
 ### Examples
 
@@ -53,22 +53,22 @@ Search for the string "root" in audit.log
 
 | Command | Description |
 |---------|-------------|
-|&|Runs commands in the background.|
-|&&|Used to combine multiple commands in one line.|
-|>|Redirects output from a command (replace).|
-|>>|Redirects output from a command (append).|
-|\||Used to pipe one command into another.|
+|&|Runs commands in the background|
+|&&|Used to combine multiple commands in one line|
+|>|Redirects output from a command (replace)|
+|>>|Redirects output from a command (append)|
+|\||Used to pipe one command into another|
 
 ## File Operating
 
 | Command | Description |
 |---------|-------------|
-|touch|Creates a file.|
-|mkdir|Creates a directory.|
-|cp|Copies a file or directory.|
-|mv|Moves or renames a file or directory.|
-|file|Determines the file type.|
-|rm|Removes a file or directory.|
+|touch|Creates a file|
+|mkdir|Creates a directory|
+|cp|Copies a file or directory|
+|mv|Moves or renames a file or directory|
+|file|Determines the file type|
+|rm|Removes a file or directory|
 
 ### Examples
 
@@ -104,7 +104,7 @@ Remove the directory secrets:
 
 | Command | Description |
 |---------|-------------|
-|md5sum|Calculates the md5 hash.|
+|md5sum|Calculates the md5 hash|
 
 ### Examples
 
@@ -116,8 +116,8 @@ Calculate the md5 hash of audit.log:
 
 | Command | Description |
 |---------|-------------|
-|fdisk|Creates, manipulates, and displays partition tables.|
-|dd|Converts and copies files.|
+|fdisk|Creates, manipulates, and displays partition tables|
+|dd|Converts and copies files|
 
 ### Examples
 
