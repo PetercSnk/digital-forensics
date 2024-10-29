@@ -2,7 +2,7 @@
 
 ## Clusters, Sectors, and Tracks
 
-<img src="images/disk-structure.png"
+<img src="images/filesystems/disk-structure.png"
     alt="image showing clusters, sectors, and tracks"
     style="background-color:grey;
         width:50%;"/>

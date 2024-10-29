@@ -32,7 +32,7 @@ on top. Logical volumes are not limited to one physical drive but instead the vo
 which can span mulitple drives and partitions. An example of this is RAID 1 which mirrors 
 data across drives.
 
-![image representing physical and logical drives](images/volumes.png)
+![image representing physical and logical drives](images/drives/volumes.png)
 
 ## Logical Drives
 
